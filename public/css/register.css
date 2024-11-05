@@ -1,0 +1,15 @@
+.min-vh-100 {
+    min-height: 100vh;
+}
+
+.password-toggle {
+    cursor: pointer;
+}
+
+.requirement {
+    font-size: 0.875rem;
+}
+
+.password-requirements {
+    margin-top: 1rem;
+} 

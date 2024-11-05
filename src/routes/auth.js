@@ -37,10 +37,22 @@ router.post('/login', async (req, res) => {
     try {
         const { email, senha } = req.body;
 
+        // Verificar se o email foi fornecido
+        if (!email) {
+            return res.status(400).json({ message: 'Por favor, insira seu email' });
+        }
+
+        // Verificar se a senha foi fornecida
+        if (!senha) {
+            return res.status(400).json({ message: 'Por favor, insira sua senha' });
+        }
+
         // Buscar usuário
         const [usuarios] = await db.query('SELECT * FROM usuarios WHERE email = ?', [email]);
+        
+        // Verificar se o email existe
         if (usuarios.length === 0) {
-            return res.status(401).json({ message: 'Credenciais inválidas' });
+            return res.status(401).json({ message: 'Email não cadastrado' });
         }
 
         const usuario = usuarios[0];
@@ -48,7 +60,7 @@ router.post('/login', async (req, res) => {
         // Verificar senha
         const senhaValida = await bcrypt.compare(senha, usuario.senha);
         if (!senhaValida) {
-            return res.status(401).json({ message: 'Credenciais inválidas' });
+            return res.status(401).json({ message: 'Senha incorreta' });
         }
 
         // Gerar token
@@ -64,7 +76,7 @@ router.post('/login', async (req, res) => {
         });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ message: 'Erro ao fazer login' });
+        res.status(500).json({ message: 'Erro interno do servidor' });
     }
 });
 
