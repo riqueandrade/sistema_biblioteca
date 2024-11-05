@@ -1,11 +1,166 @@
+/* Navbar Styles */
+.navbar {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.8rem 1rem;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.navbar-brand i {
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    padding: 6rem 0;
+    margin-bottom: 2rem;
+}
+
+.hero-section .display-4 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-section .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.btn-lg {
+    padding: 0.8rem 1.5rem;
+    font-weight: 500;
+}
+
+/* Features Section */
+.features-section {
+    background-color: #f8f9fa;
+}
+
 .feature-card {
-    transition: transform 0.2s;
+    background: white;
+    border-radius: 1rem;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
-.display-4 {
+.feature-icon {
+    font-size: 2.5rem;
+    color: #1e3c72;
+}
+
+.feature-card h3 {
+    color: #1e3c72;
     font-weight: 600;
+}
+
+.feature-card ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    border-top: 1px solid #2a2a2a;
+}
+
+.footer-brand {
+    color: #fff;
+    font-weight: 600;
+}
+
+.footer-brand i {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.footer-title {
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer ul li a {
+    color: #a0a0a0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer ul li a:hover {
+    color: #fff;
+}
+
+.footer .text-muted {
+    color: #a0a0a0 !important;
+}
+
+.social-links a {
+    color: #a0a0a0;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #fff;
+}
+
+.footer hr {
+    border-color: #2a2a2a;
+    opacity: 0.1;
+}
+
+.footer i.bi-heart-fill {
+    font-size: 0.8rem;
+    color: #dc3545;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-title {
+        margin-top: 1rem;
+    }
+}
+
+/* Buttons */
+.btn-primary {
+    background: #1e3c72;
+    border-color: #1e3c72;
+}
+
+.btn-primary:hover {
+    background: #2a5298;
+    border-color: #2a5298;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-section, .feature-card {
+    animation: fadeIn 0.8s ease-out;
 } 
